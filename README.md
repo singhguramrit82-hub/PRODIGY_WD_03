@@ -30,9 +30,9 @@ This project was developed as part of my Web Development Internship at **Prodigy
 ```
 
 ## 📸 Game Preview 
-<img src="./preview/main.png" width="600">
+<img src="TicTacToe/preview/main.png" width="600">
 <br>
-<img src="./preview/game.png" width="600">
+<img src="TicTacToe/preview/game.png" width="600">
 
 ## 👨‍💻 Author
 **Guramrit Singh**  
