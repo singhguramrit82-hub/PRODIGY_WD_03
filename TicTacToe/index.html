@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<!-- Handles the user's choice between playing a computer or a friend and gathers player names before the game starts. -->
+<body class="menu-page">
+
+    <div class="container main-box">      <!--Glassmorphic card containing all the elements--> 
+        <h1 class="neon-title">TIC TAC TOE</h1>
+        <p class="subtitle">SELECT GAME MODE</p>
+        
+        <div class="mode-selection">
+            <button type="button" id="btn-computer" class="mode-btn" onclick="setMode('computer')">
+                PLAY VS COMPUTER <span class="icon">🤖</span>
+            </button>
+
+            <button type="button" id="btn-multi" class="mode-btn" onclick="setMode('multi')">
+                MULTIPLAYER <span class="icon">⚔️</span> 
+            </button>
+        </div>
+
+        <!-- It contains two input boxes for Player 1 and Player 2 names -->
+        <div id="playerForm" class="hidden-form">
+            <div class="input-group">
+                <input type="text" id="p1" placeholder="Player 1" maxlength="10">
+                <input type="text" id="p2" placeholder="Player 2" maxlength="10">
+            </div>
+        </div>
+
+        <button type="button" class="start-btn" onclick="validateAndStart()">START GAME</button>
+    </div> 
+
+    <script>
+        let selectedMode = "";
+
+        function setMode(mode) {
+            selectedMode = mode;
+            
+            // UI Feedback: Toggle active class on buttons
+            document.getElementById("btn-computer").classList.remove("active");
+            document.getElementById("btn-multi").classList.remove("active");
+            
+            const playerForm = document.getElementById("playerForm");
+
+            if (mode === 'computer') {
+                document.getElementById("btn-computer").classList.add("active");
+                playerForm.classList.remove("show"); // Hide names for computer mode
+            } else {
+                document.getElementById("btn-multi").classList.add("active");
+                playerForm.classList.add("show"); // Show names for multiplayer
+            }
+        } 
+
+        function validateAndStart() {
+            if (!selectedMode) {
+                // alert if no mode is selected
+                alert("Choose a mode to start the game!");
+                return;
+            }
+
+            let p1Name = document.getElementById("p1").value.trim() || "Player 1";
+            let p2Name = document.getElementById("p2").value.trim() || "Player 2";
+
+            if (selectedMode === "computer") {
+                p1Name = "You";
+                p2Name = "Computer";
+            }
+
+            // Store data for the game page
+            localStorage.setItem("mode", selectedMode);
+            localStorage.setItem("p1", p1Name);
+            localStorage.setItem("p2", p2Name);
+
+            // Redirect to game page
+            window.location.href = "game.html";
+        }
+    </script>
+</body>
+</html>

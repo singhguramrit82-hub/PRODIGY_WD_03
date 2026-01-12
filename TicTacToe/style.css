@@ -1,0 +1,254 @@
+:root { /* The colour palette : give names to different colour codes */
+  --bg-slate: #0f172a;
+  --card-slate: #1e293b;
+  --neon-cyan: #00f1fef2;
+  --neon-pink: #ff007a;
+  --text-main: #f8fafc;
+  --border-glow: rgba(0, 242, 254, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.05); 
+  --neon-emerald: #2ecc70e5; 
+  --emerald-glow: rgba(46, 204, 113, 0.4);
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-main);
+}
+
+/* Defines the Pill shape for every button and adds a transition to make the buttons move smoothly */
+button {
+  width: 100%;
+  padding: 18px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 50px; /*Curved vertices for pill-shaped buttons*/
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
+button:hover{
+  background: var(--neon-cyan);
+  color: --bg-slate;
+  box-shadow: 0 0 35px var(--neon-cyan);
+  background: var(--neon-cyan);
+  transform: translateY(-3px);
+} 
+
+/* -- BACKGROUNDS -- */
+.menu-page {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), url("./images/front_background.png");
+}
+
+.game-page {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url("./images/Game_background.png");
+}
+
+/* -- CONTAINER -- */
+.container {
+  background: var(--glass-bg); 
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  text-align: center;
+  padding: 50px 40px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  width: 480px; 
+  transition: all 0.4s ease;
+  align-items: center; 
+  justify-content: center;
+}
+
+/* --- TITLES --- */
+h1 {
+  font-size: 4.0rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+  background: linear-gradient(to bottom, #fff, var(--neon-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+/* --- MODE BUTTONS & ALIGNMENT --- */
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mode-btn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.2rem;
+  padding: 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-btn.active {
+  background: var(--neon-cyan);
+  color: var(--bg-slate);
+  box-shadow: 0 0 20px var(--border-glow);
+  border-color: white;
+}
+
+/* --- HIDDEN FORM & INPUTS --- */
+.hidden-form {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 0;
+}
+
+.hidden-form.show {
+  max-height: 150px;
+  opacity: 1;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+.input-group {
+  display: flex;
+  gap: 15px; 
+}
+
+.input-group input {
+  flex: 1; /* Makes them side by side equal width */
+  padding: 15px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: var(--neon-cyan);
+}
+
+/* --- START BUTTON --- */
+.start-btn {
+  width: 60%;
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(0, 242, 254, 0.2));
+  border: 2px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+  font-size: 1rem;     
+  margin: 30px auto 0;   
+  display: block;
+}
+
+.start-btn:hover {
+  width: 60%;
+  background: var(--neon-cyan);
+  color: #0f172a;
+  box-shadow: 0 0 35px var(--neon-cyan);
+  background: var(--neon-cyan);
+  transform: translateY(-3px);
+}
+
+/* --- GAME BOARD STYLES --- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 110px);
+  grid-template-rows: repeat(3, 110px);
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 110px;
+  height: 110px;
+  background: rgba(15, 23, 42, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cell[data-player="X"] { 
+  color: var(--neon-pink); 
+  text-shadow: 0 0 20px var(--neon-pink); 
+}
+
+.cell[data-player="O"] { 
+  color: var(--neon-cyan); 
+  text-shadow: 0 0 20px var(--neon-cyan); 
+}
+
+/* O turn hover */
+.board.o-turn .cell:hover:not(.win):not(.filled) {
+  box-shadow: 0 0 10px rgba(0, 150, 255, 0.8);
+}
+
+/* X turn hover */
+.board.x-turn .cell:hover:not(.win):not(.filled) {
+  box-shadow: 0 0 10px rgba(255, 60, 60, 0.8);
+}
+
+.cell.win {
+  background: white;
+  color: var(--bg-slate) !important;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.895);
+}
+
+#reset {
+  width: 60%;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.2));
+  border: 2px solid #2ecc71; /* Emerald Green */
+  color: #2ecc71;
+  margin-top: 40px; 
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px var(--emerald-glow);
+  box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#reset:hover {
+  background: #2ecc71;
+  color: #0f172a;
+  box-shadow: 0 0 35px #2ecc71;
+  transform: translateY(3px) scale(1.02); /* Slight push down on hover */
+}
