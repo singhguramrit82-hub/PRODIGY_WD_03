@@ -17,15 +17,16 @@ This project was developed as part of my Web Development Internship at **Prodigy
 
 ## 📂 File Structure
 ```
-├── index.html # Main Menu & Mode Selection
-├── game.html # Game Board UI
-├── style.css # Neon & Glassmorphism Styles
-├── script.js # Game Logic & AI Engine
-├── sounds/ # Game SFX (click, win, lose)
+├── index.html             # Main Menu & Mode Selection
+├── game.html              # Game Board UI
+├── style.css              # Neon & Glassmorphism Styles
+├── script.js              # Game Logic & AI Engine
+├── sounds/                # Game SFX (click, win, lose)
 │ ├── click.wav
 │ ├── win.wav
 │ └── lose.mp3
-└── images/ # Background Assets
+├── images/                # Background Assets
+└── preview/               # Screenshots of the web game               
 ```
 
 ## 📸 Game Preview: 
