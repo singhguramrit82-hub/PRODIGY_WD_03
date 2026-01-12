@@ -29,7 +29,9 @@ This project was developed as part of my Web Development Internship at **Prodigy
 └── preview/               # Screenshots of the web game               
 ```
 
-## 📸 Game Preview: 
+## 📸 Game Preview 
+![Main Menu](preview/menu.png)
+![Gameplay](preview/game.png)
 
 ## 👨‍💻 Author
 **Guramrit Singh**  
