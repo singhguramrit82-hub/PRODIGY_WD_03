@@ -7,7 +7,7 @@ This project was developed as part of my Web Development Internship at **Prodigy
 ## ✨ Features
 * **Dual Game Modes:** Challenge a friend locally or test your skills against a smart AI.
 * **Smart AI:** The computer blocks your winning moves and looks for the best strategic spots.
-* **Glassmorphism UI:** Frosted glass effects using `backdrop-filter`.
+* **Glassmorphism UI:** Frosted glass effects with animations.
 * **Immersive Audio:** Custom sound effects for clicks, wins, and losses.
 
 ## 🛠️ Technologies Used
@@ -16,12 +16,17 @@ This project was developed as part of my Web Development Internship at **Prodigy
 - JavaScript (Vanilla)  
 
 ## 📂 File Structure
-├── index.html          # Main Menu & Mode Selection
-├── game.html           # Game Board UI
-├── style.css           # Neon & Glassmorphism Styles
-├── script.js           # Game Logic & AI Engine
-├── /sounds             # Game SFX (Click, Win, Lose)
-└── /images             # Background Assets```
+```
+├── index.html # Main Menu & Mode Selection
+├── game.html # Game Board UI
+├── style.css # Neon & Glassmorphism Styles
+├── script.js # Game Logic & AI Engine
+├── sounds/ # Game SFX (click, win, lose)
+│ ├── click.wav
+│ ├── win.wav
+│ └── lose.mp3
+└── images/ # Background Assets
+```
 
 ## 📸 Game Preview: 
 
